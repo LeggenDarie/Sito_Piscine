@@ -1,39 +1,36 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Funzione per nascondere tutte le sezioni
-    function hideAllSections() {
+    // Funzione per gestire la navigazione interna al sito
+    function navigateToSection(sectionId) {
         document.querySelectorAll('section').forEach(function(section) {
             section.style.display = 'none';
         });
-    }
+        document.getElementById(sectionId).style.display = 'block';
 
-    // Funzione per mostrare una specifica sezione
-    function showSection(sectionId) {
-        hideAllSections(); // Nasconde tutte le sezioni
-        var section = document.getElementById(sectionId);
-        if (section) {
-            section.style.display = 'block'; // Mostra solo la sezione desiderata
-            window.scrollTo(0, 0); // Scrolling verso l'inizio della pagina
+        // Nascondi il pulsante relativo alla sezione corrente
+        var sectionButtons = document.querySelectorAll('.buttons button');
+        sectionButtons.forEach(function(button) {
+            button.style.display = 'inline-block'; // Mostra tutti i pulsanti
+        });
+
+        if (sectionId === 'home') {
+            document.getElementById('home-btn').style.display = 'none';
+        } else if (sectionId === 'services') {
+            document.getElementById('services-btn').style.display = 'none';
+        } else if (sectionId === 'about') {
+            document.getElementById('about-btn').style.display = 'none';
+        } else if (sectionId === 'contact') {
+            document.getElementById('contact-btn').style.display = 'none';
         }
     }
 
-    // Funzione per il caricamento iniziale della pagina
-    function loadInitialPage() {
-        var hash = window.location.hash.substr(1); // Ottiene l'ID della sezione dalla barra degli indirizzi
-        if (hash) {
-            showSection(hash); // Mostra la sezione corrispondente all'ID
-        } else {
-            showSection('home'); // Se non c'è alcun ID nella barra degli indirizzi, mostra la home page
-        }
-    }
-
-    // Caricamento iniziale della pagina
-    loadInitialPage();
+    // Gestione del caricamento della pagina
+    navigateToSection('home');
 
     // Gestione dei clic sui link del menu
-    document.querySelectorAll('header .buttons button').forEach(function(button) {
-        button.addEventListener('click', function() {
-            var sectionId = this.getAttribute('onclick').match(/'#(\w+)'/)[1];
-            showSection(sectionId);
+    document.querySelectorAll('.buttons button').forEach(function(button) {
+        button.addEventListener('click', function(event) {
+            var sectionId = this.getAttribute('onclick').split("#")[1].split("';")[0];
+            navigateToSection(sectionId);
         });
     });
 });

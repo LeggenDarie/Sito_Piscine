@@ -1,29 +1,59 @@
 /* Stili base */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
+    background-color: #f8f9fa; /* Colore sfondo grigio chiaro */
 }
+
+/* Stili per il contenitore della pagina */
+.content {
+    padding-top: 70px; /* Altezza del site-panel */
+    position: relative; /* Imposta la posizione relativa */
+    min-height: calc(100vh - 70px); /* Altezza minima pari all'altezza della viewport meno l'altezza del site-panel */
+}
+
+/* Stili per il footer */
+footer {
+    background-color: #008080; /* Colore acqua */
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    width: 100%;
+    position: fixed; /* Imposta la posizione fissa */
+    bottom: 0;
+}
+
 
 /* Aggiornamento dello stile per l'header */
 header {
-    background-color: #333;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Assicura che l'header sia sopra al resto del contenuto */
+    background-color: #008080; /* Colore acqua */
     color: #fff;
     padding: 10px;
 }
 
 /* Stili per il site-panel */
 .site-panel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
     display: flex;
-    justify-content: space-between; /* Distribuisce gli elementi in modo uniforme lungo la linea principale (orizzontalmente) */
-    align-items: center; /* Centra gli elementi verticalmente */
+    justify-content: space-between;
+    align-items: center;
     padding: 10px;
-    background-color: #333;
+    background-color: #008080; /* Colore acqua */
     color: #fff;
 }
 
 .logo {
     font-size: 24px;
+    font-weight: bold; /* Testo in grassetto per il logo */
 }
 
 .buttons {
@@ -35,42 +65,56 @@ header {
     border: none;
     color: #fff;
     font-size: 16px;
-    margin-left: 10px; /* Aggiunge uno spazio tra i pulsanti */
+    margin-left: 10px;
     cursor: pointer;
 }
 
-.buttons button:focus {
-    outline: none; /* Rimuove il contorno attorno al pulsante quando viene selezionato */
+.buttons button:hover {
+    color: #cc5500; /* Cambio colore al passaggio del mouse */
 }
 
+.buttons button:focus {
+    outline: none;
+}
+
+/* Stili per le sezioni */
 section {
     padding: 50px 0;
     text-align: center;
+    background-color: #f2f2f2; /* Colore sfondo grigio chiaro */
 }
 
+/* Testo evidenziato */
+.section-title {
+    color: #008080; /* Colore testo verde acqua */
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.section-content {
+    color: #555;
+}
+
+/* Stili per il footer */
 footer {
-    background-color: #333;
+    background-color: #008080; /* Colore acqua */
     color: #fff;
     text-align: center;
     padding: 10px 0;
-    position: fixed;
     width: 100%;
+    position: fixed; /* Imposta la posizione fissa */
     bottom: 0;
 }
 
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 20px;
-    padding-bottom: 70px; /* Altezza del footer */
-    /* Aggiungiamo un margine inferiore per separare il footer dal contenuto */
-    margin-bottom: 70px;
 }
-
 /* Pulsante */
 .btn {
     display: inline-block;
-    background-color: #ff6600;
+    background-color: #008080; /* Colore arancione */
     color: #fff;
     padding: 12px 30px;
     text-decoration: none;
@@ -79,50 +123,103 @@ footer {
 }
 
 .btn:hover {
-    background-color: #cc5500;
+    background-color: #cc5500; /* Cambio colore al passaggio del mouse */
 }
 
-/* Testo della home */
-#home h2, #home h3 {
-    color: #333;
+.btn-request-quote {
+    background-color: #008080; /* Colore arancione */
+    color: #fff;
+    padding: 12px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
 }
 
-#home p {
-    color: #555;
-    margin-bottom: 20px;
+.btn-request-quote:hover {
+    background-color: #cc5500; /* Cambio colore al passaggio del mouse */
 }
 
-#home ul {
-    text-align: left;
-    margin-bottom: 20px;
+/* Aggiunta di un selettore più specifico per il pulsante "Richiedi un Preventivo" */
+#content .btn-request-quote {
+    background-color:#008080; /* Colore arancione */
+    color: #fff;
+    padding: 12px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
 }
 
-#home ul li {
-    color: #666;
-    margin-bottom: 5px;
+#content .btn-request-quote:hover {
+    background-color: #cc5500; /* Cambio colore al passaggio del mouse */
 }
 
-#home a {
-    margin-top: 20px;
-}
-
-/* Stili dei servizi */
-.service {
-    margin-bottom: 40px;
-}
-
-.service h3 {
-    color: #333;
-}
-
-.service p {
-    color: #555;
-}
 
 /* Stili dei caroselli */
 .carousel-item img {
     width: 100%;
-    height: auto;
-    max-height: 200px; /* Altezza massima desiderata per le immagini nel carosello */
+    height: 250px; /* Altezza desiderata per tutte le immagini */
     object-fit: cover; /* Ridimensiona l'immagine mantenendo l'aspetto originale */
 }
+
+/* CSS per lo stile delle cards */
+
+
+
+.card-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0px;
+    padding-top: 40px;
+  }
+  
+  .card-container .card {
+    position: relative;
+    width: 296px;
+    height: 400px;
+    margin: 30px;
+    box-shadow: 20px 20px 50px rgba(255, 255, 255, 0.5);
+    border-radius: 15px;
+    background: #008080;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(5px);
+  }
+  
+  .card-container .card .card-content {
+    padding: 20px;
+    text-align: center;
+    transform: translateY(250px);
+    transition: 0.5s;
+  }
+  
+  .card-container .card:hover .card-content {
+    transform: translateY(-165px);
+  }
+  
+  .card-container .card .card-content h3 {
+    font-size: 2.3em;
+    color: #fff;
+    padding-bottom: 220px;
+  }
+  
+  .card-container .card .card-content p {
+    font-size: 1em;
+    color: #fff;
+    font-weight: 300;
+  }
+  
