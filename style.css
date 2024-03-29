@@ -1,0 +1,128 @@
+/* Stili base */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Aggiornamento dello stile per l'header */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+}
+
+/* Stili per il site-panel */
+.site-panel {
+    display: flex;
+    justify-content: space-between; /* Distribuisce gli elementi in modo uniforme lungo la linea principale (orizzontalmente) */
+    align-items: center; /* Centra gli elementi verticalmente */
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+}
+
+.logo {
+    font-size: 24px;
+}
+
+.buttons {
+    display: flex;
+}
+
+.buttons button {
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    margin-left: 10px; /* Aggiunge uno spazio tra i pulsanti */
+    cursor: pointer;
+}
+
+.buttons button:focus {
+    outline: none; /* Rimuove il contorno attorno al pulsante quando viene selezionato */
+}
+
+section {
+    padding: 50px 0;
+    text-align: center;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    padding-bottom: 70px; /* Altezza del footer */
+    /* Aggiungiamo un margine inferiore per separare il footer dal contenuto */
+    margin-bottom: 70px;
+}
+
+/* Pulsante */
+.btn {
+    display: inline-block;
+    background-color: #ff6600;
+    color: #fff;
+    padding: 12px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #cc5500;
+}
+
+/* Testo della home */
+#home h2, #home h3 {
+    color: #333;
+}
+
+#home p {
+    color: #555;
+    margin-bottom: 20px;
+}
+
+#home ul {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+#home ul li {
+    color: #666;
+    margin-bottom: 5px;
+}
+
+#home a {
+    margin-top: 20px;
+}
+
+/* Stili dei servizi */
+.service {
+    margin-bottom: 40px;
+}
+
+.service h3 {
+    color: #333;
+}
+
+.service p {
+    color: #555;
+}
+
+/* Stili dei caroselli */
+.carousel-item img {
+    width: 100%;
+    height: auto;
+    max-height: 200px; /* Altezza massima desiderata per le immagini nel carosello */
+    object-fit: cover; /* Ridimensiona l'immagine mantenendo l'aspetto originale */
+}
